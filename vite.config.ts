@@ -4,30 +4,30 @@ import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig({
-    plugins: [
-        react({
-          jsxRuntime: "classic"
-        }),
-        dts({
-            insertTypesEntry: true,
-        }),
-    ],
-    build: {
-        lib: {
-            entry: path.resolve(__dirname, 'src/index.ts'),
-            name: 'dist',
-            formats: ['es', 'cjs'],
-            fileName: (format) => `index.${format}.js`,
-        },
-        rollupOptions: {
-            external: ['react', 'react-dom', 'styled-components', 'tslib'],
-            output: {
-                globals: {
-                    react: 'React',
-                    'react-dom': 'ReactDOM',
-                    'styled-components': 'styled',
-                },
-            },
-        },
-    },
+	plugins: [
+		react({
+			jsxRuntime: 'classic',
+		}),
+		dts({
+			insertTypesEntry: true,
+		}),
+	],
+	build: {
+		lib: {
+			entry: path.resolve(__dirname, 'src/index.ts'),
+			name: 'dist',
+			formats: ['es', 'cjs'],
+			fileName: (format) => `index.${format}.js`,
+		},
+		rollupOptions: {
+			external: ['react', 'react-dom', 'styled-components', 'tslib'],
+			output: {
+				globals: {
+					react: 'React',
+					'react-dom': 'ReactDOM',
+					'styled-components': 'styled',
+				},
+			},
+		},
+	},
 });
