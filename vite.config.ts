@@ -20,12 +20,10 @@ export default defineConfig({
 			fileName: (format) => `index.${format}.js`,
 		},
 		rollupOptions: {
-			external: ['react', 'react-dom', 'styled-components', 'tslib'],
 			output: {
 				globals: {
 					react: 'React',
 					'react-dom': 'ReactDOM',
-					'styled-components': 'styled',
 				},
 			},
 		},
